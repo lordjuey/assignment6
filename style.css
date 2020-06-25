@@ -1,0 +1,12 @@
+#header{
+    font-size: 35px;
+    color:white;
+    background: rgb(70, 71, 61);
+    text-align: center;
+}
+
+.divBox{
+    border:1px solid grey;
+    padding:3%;
+    height: 400px;
+}
