@@ -1,12 +1,22 @@
-#header{
-    font-size: 35px;
-    color:white;
-    background: rgb(70, 71, 61);
-    text-align: center;
+#header {
+  font-size: 35px;
+  color: white;
+  background: rgb(70, 71, 61);
+  text-align: center;
 }
 
-.divBox{
-    border:1px solid grey;
-    padding:3%;
-    height: 400px;
+.divBox {
+  border: 1px solid grey;
+  padding: 3%;
+  height: 400px;
+}
+
+#contents {
+  margin-top: 3%;
+}
+
+.cityEl {
+  border: 1px solid black;
+  padding: 2%;
+  margin: 3%;
 }
