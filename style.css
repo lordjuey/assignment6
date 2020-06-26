@@ -4,19 +4,22 @@
   background: rgb(70, 71, 61);
   text-align: center;
 }
+.wrapper {
+  margin-top: 5%;
+}
 
 .divBox {
   border: 1px solid grey;
   padding: 3%;
-  height: 400px;
-}
-
-#contents {
-  margin-top: 3%;
+  height: 500px;
 }
 
 .cityEl {
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   padding: 2%;
-  margin: 3%;
+  margin: 2%;
+}
+
+#sidePanel {
+  margin-left: 1%;
 }
