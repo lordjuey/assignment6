@@ -5,19 +5,27 @@
   text-align: center;
 }
 .wrapper {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .divBox {
   border: 1px solid grey;
   padding: 3%;
-  height: 500px;
+  height: 400px;
+  margin:2%;
+}
+.divBox:hover{
+  background:palegoldenrod;
 }
 
 .cityEl {
   border: 1px solid lightgrey;
   padding: 2%;
   margin: 2%;
+}
+.cityEl:hover{
+  border:1px solid green;
+  background:paleturquoise;
 }
 
 #sidePanel {
