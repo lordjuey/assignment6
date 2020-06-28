@@ -31,3 +31,18 @@
 #sidePanel {
   margin-left: 1%;
 }
+
+.fiveDayForecastBox{
+  display:flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.fiveDayForecastBox>div{
+position: relative;
+ margin:1%;
+ padding:5%;
+ text-align: center;
+ border:1px solid grey;
+}

@@ -17,12 +17,12 @@ $("#submitBtn").on("click", function () {
 
 //to write a function that gets info from openWeatherMap API
 function getWeather() {
-  const cityName = $(this).text();
-  console.log(cityName);
+  const cityInput = $(this).text();
+  console.log(cityInput);
 
   const queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    cityName +
+    cityInput +
     "&appid=166a433c57516f51dfab1f7edaed8413";
 
   // AJAX call to the OpenWeatherMap API
@@ -30,13 +30,16 @@ function getWeather() {
     url: queryURL,
     method: "GET",
   })
-    // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
       // Log the queryURL
       console.log(queryURL);
       console.log(response);
       $("#cityNameDisplay").text(response.name); //get the name of city on screen
-      // Log the resulting object
+      $("#cityTempDisplay").text(response.main.temp);
+      $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
+      $('#cityHumidDisplay').text(response.main.humidity);      
+      $('#cityWindDisplay').text(response.wind.speed);
+      getFiveDays(cityInput);
     });
 }
 
@@ -58,16 +61,38 @@ const queryURL =
       console.log(response);
       $("#cityNameDisplay").text(response.name); //get the name of city on screen
       $("#cityTempDisplay").text(response.main.temp);
-      $("#cityTempDisplayCel").text()
+      $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
+      $('#cityHumidDisplay').text(response.main.humidity);      
+      $('#cityWindDisplay').text(response.wind.speed);
+      // response.weather[0].icon;
+      getFiveDays(cityInput);
     });
 }
 
-//function that save cities to localStorage
+//function for 5 days forcast 
+function getFiveDays(cityInput){
+  const queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+
+  cityInput +"&appid=166a433c57516f51dfab1f7edaed8413"
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+    .then(function (response) {
+      // Log the queryURL
+      console.log(queryURL);
+      console.log(response);
+})};
+
+//function that save cities to localStorage 
 function saveCity() {}
 
 //function to change degree into celcius 
 function convertKtoC(kelvin){
- 
+ if(kelvin <0){
+   return "below absolute zero"
+ } else {
+   return (kelvin - 273.15);
+ }
 }
 
 // $('#cityLists').on('click', getWeather);
