@@ -33,12 +33,18 @@ function getWeather() {
     // Log the queryURL
     console.log(queryURL);
     console.log(response);
+    let lat = response.coord.lat;
+    let lon = response.coord.lon;
+    console.log(lat);
+    console.log(lon);
     $("#cityNameDisplay").text(response.name); //get the name of city on screen
     $("#cityTempDisplay").text(response.main.temp);
     $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
     $("#cityHumidDisplay").text(response.main.humidity);
     $("#cityWindDisplay").text(response.wind.speed);
     getFiveDays(cityInput);
+    $("#cityUV").removeClass();
+    getUV(lat, lon);
   });
 }
 
@@ -58,6 +64,10 @@ function getWeather2(cityInput) {
       // Log the queryURL
       console.log(queryURL);
       console.log(response);
+      let lat = response.coord.lat;
+      let lon = response.coord.lon;
+      console.log(lat);
+      console.log(lon);
       $("#cityNameDisplay").text(response.name); //get the name of city on screen
       $("#cityTempDisplay").text(response.main.temp);
       $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
@@ -65,6 +75,8 @@ function getWeather2(cityInput) {
       $("#cityWindDisplay").text(response.wind.speed);
       // response.weather[0].icon;
       getFiveDays(cityInput);
+      $("#cityUV").removeClass();
+      getUV(lat, lon);
     });
 }
 
@@ -105,6 +117,37 @@ function getFiveDays(cityInput) {
     //icon
     $("#temp5").text(convertKtoC(response.list[39].main.temp).toFixed(2));
     $("#humid5").text(response.list[39].main.humidity);
+  });
+}
+
+function getUV(lat, lon) {
+  const queryURL =
+    "https://api.openweathermap.org/data/2.5/uvi?appid=166a433c57516f51dfab1f7edaed8413&lat=" +
+    lat +
+    "&lon=" +
+    lon;
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(queryURL);
+    console.log(response);
+    $("#cityUV").text(response.value);
+    if (response.value < 3) {
+      $("#cityUV").addClass("uvGreen");
+    }
+    if (response.value >= 3 && response.value < 6) {
+      $("#cityUV").addClass("uvYellow");
+    }
+    if (response.value >= 6 && response.value < 8) {
+      $("#cityUV").addClass("uvOrange");
+    }
+    if (response.value >= 8 && response.value < 11) {
+      $("#cityUV").addClass("uvRed");
+    }
+    if (response.value >= 11) {
+      $("#cityUV").addClass("uvPurple");
+    }
   });
 }
 

@@ -49,3 +49,29 @@
   color: brown;
   background: paleturquoise;
 }
+
+#cityUV {
+  border: 1px solid black;
+  padding: 1%;
+}
+
+.uvGreen {
+  background: green;
+  color: white;
+}
+.uvYellow {
+  background: yellow;
+  color: red;
+}
+.uvOrange {
+  background: orange;
+  color: navy;
+}
+.uvRed {
+  background: red;
+  color: yellow;
+}
+.uvPurple {
+  background: purple;
+  color: yellow;
+}
