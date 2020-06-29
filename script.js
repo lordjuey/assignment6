@@ -4,7 +4,7 @@ let cityArray = [];
 
 $("#submitBtn").on("click", function () {
   event.preventDefault();
-  const cityInput = $("#cityName").val(); //!!!! have to clean this up
+  const cityInput = $("#cityName").val();
   console.log(cityInput); // to test its grabbing the right input
   const a = $("<div>");
   a.addClass("cityEl");
@@ -226,4 +226,3 @@ $("#removeLocalData").on("click", function () {
 // $('#cityLists').on('click', getWeather);
 $(document).on("click", ".cityEl", getWeather);
 init();
-// tonight i have to fix : Date , Icon, localStorage //
