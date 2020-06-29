@@ -14,7 +14,7 @@ this app would be very useful if you want to know details of weather on specific
 extremely useful if you're planning on traveling.
 
 //SCREENSHOT OF THE WORKING APP
-
+https://github.com/lordjuey/assignment6/blob/master/img/weatherAPP%201.PNG?raw=true
 //CREDITS
 just me on my own . No youtube tutorial this time.
 
