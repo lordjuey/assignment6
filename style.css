@@ -12,10 +12,10 @@
   border: 1px solid grey;
   padding: 3%;
   height: 400px;
-  margin:2%;
+  margin: 2%;
 }
-.divBox:hover{
-  background:palegoldenrod;
+.divBox:hover {
+  background: palegoldenrod;
 }
 
 .cityEl {
@@ -23,26 +23,29 @@
   padding: 2%;
   margin: 2%;
 }
-.cityEl:hover{
-  border:1px solid green;
-  background:paleturquoise;
+.cityEl:hover {
+  border: 1px solid green;
+  background: paleturquoise;
 }
 
 #sidePanel {
   margin-left: 1%;
 }
 
-.fiveDayForecastBox{
-  display:flex;
+.fiveDayForecastBox {
+  display: flex;
   justify-content: center;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
 
-.fiveDayForecastBox>div{
-position: relative;
- margin:1%;
- padding:5%;
- text-align: center;
- border:1px solid grey;
+.fiveDayForecastBox > div {
+  position: relative;
+  margin: 1%;
+  margin-bottom: 2%;
+  padding: 2%;
+  text-align: center;
+  border: 1px solid grey;
+  color: brown;
+  background: paleturquoise;
 }
