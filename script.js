@@ -71,7 +71,7 @@ function getWeather2(cityInput) {
 //function for 5 days forcast
 function getFiveDays(cityInput) {
   const queryURL =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityInput +
     "&appid=166a433c57516f51dfab1f7edaed8413";
   $.ajax({
