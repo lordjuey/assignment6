@@ -46,11 +46,17 @@
               <label
                 >Search for a city
                 <input id="cityName" type="text" placeholder="Seoul" /><a
-                  class="button small"
+                  class="button small medium-2 cell"
                   style="justify-self: center;"
                   id="submitBtn"
-                  >hit!</a
-                >
+                  >submit :)
+                </a>
+                <a
+                  class="button small medium-2 cell"
+                  style="justify-self: center;"
+                  id="removeLocalData"
+                  >remove saved citie
+                </a>
               </label>
             </div>
             <hr />
@@ -59,13 +65,18 @@
         </div>
         <div class="medium-9 columns panel" data-equalizer-watch>
           <div class="divBox weatherBoard">
-            <h2 id="cityNameDisplay">Enter City Name</h2>
+            <div>
+              <h2 id="cityNameDisplay">
+                Enter City Name
+              </h2>
+              <img id="weatherIcon" />
+            </div>
             <br />
             <hr />
             <p>Temperature : <span id="cityTempDisplay"></span></p>
             <p>
               Temperature in celcius:
-              <span id="cityTempDisplayCel"></span> °C
+              <span id="cityTempDisplayCel"></span>°C
             </p>
             <p>Humidity :<span id="cityHumidDisplay"></span></p>
             <p>Wind Speed :<span id="cityWindDisplay"></span></p>
@@ -77,31 +88,31 @@
             <div class="fiveDayForecastBox">
               <div id="day1">
                 <p id="date1"></p>
-                <p id="icon1"></p>
+                <img class="icon1" />
                 <p>Temp: <span id="temp1"></span>°C</p>
                 <p>Humidity: <span id="humid1"></span></p>
               </div>
               <div id="day2">
                 <p id="date2"></p>
-                <p id="icon2"></p>
+                <img class="icon2" />
                 <p>Temp: <span id="temp2"></span>°C</p>
                 <p>Humidity: <span id="humid2"></span></p>
               </div>
               <div id="day3">
                 <p id="date3"></p>
-                <p id="icon3"></p>
+                <img class="icon3" />
                 <p>Temp: <span id="temp3"></span>°C</p>
                 <p>Humidity: <span id="humid3"></span></p>
               </div>
               <div id="day4">
                 <p id="date4"></p>
-                <p id="icon4"></p>
+                <img class="icon4" />
                 <p>Temp: <span id="temp4"></span>°C</p>
                 <p>Humidity: <span id="humid4"></span></p>
               </div>
               <div id="day5">
                 <p id="date5"></p>
-                <p id="icon5"></p>
+                <img class="icon5" />
                 <p>Temp: <span id="temp5"></span>°C</p>
                 <p>Humidity: <span id="humid5"></span></p>
               </div>
@@ -120,6 +131,10 @@
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/dc0c634418.js"
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>

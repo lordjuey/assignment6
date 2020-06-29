@@ -9,8 +9,9 @@
 }
 
 .divBox {
+  flex-wrap: wrap;
   border: 1px solid grey;
-  padding: 3%;
+  padding: 1%;
   height: 400px;
   margin: 2%;
 }
@@ -50,9 +51,12 @@
   background: paleturquoise;
 }
 
-#cityUV {
+.cityUV {
   border: 1px solid black;
+  border-radius: 15px;
   padding: 1%;
+  text-align: center;
+  margin-left: 5px;
 }
 
 .uvGreen {
@@ -74,4 +78,8 @@
 .uvPurple {
   background: purple;
   color: yellow;
+}
+
+.weatherIcon {
+  text-align: end;
 }
