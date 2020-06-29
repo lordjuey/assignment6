@@ -3,21 +3,22 @@
 weatherApp using weatherAPI
 
 # 06 Server-Side APIs: Weather Dashboard
-
+//DESCRIPTION
 Using thrid-party API , openweathermap , I created an app that tells you current weather of selected cities and its 5 day weather forecast.
 by pressing submit button, you can add cities and the website will remember the data even after refreshing the page.
 I have added a button which clears the local storage data and refreshing the page so that the user can have cleaner website when it gets too dirty.
 
-<Usage of this app>
+//USAGE OF THE APP 
 this app would be very useful if you want to know details of weather on specific cities around the world and its near future weather. 
 extremely useful if you're planning on traveling.
 
-<screenshot of the working app >
+//SCREENSHOT OF THE WORKING APP 
 
-<credits>
+
+//CREDITS
 just me on my own . No youtube tutorial this time.
 
-<license>
+//LICENSE
 Copyright (c) [2020] [Juwon Hong a.k.a lordjuey]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
