@@ -17,45 +17,45 @@ $("#submitBtn").on("click", function () {
 });
 
 //to write a function that gets info from openWeatherMap API
-function getWeather() {
-  const cityInput = $(this).text();
-  console.log(cityInput);
+// function getWeather() {
+//   const cityInput = $(this).text();
+//   console.log(cityInput);
 
-  const queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    cityInput +
-    "&appid=166a433c57516f51dfab1f7edaed8413";
+//   const queryURL =
+//     "https://api.openweathermap.org/data/2.5/weather?q=" +
+//     cityInput +
+//     "&appid=166a433c57516f51dfab1f7edaed8413";
 
-  // AJAX call to the OpenWeatherMap API
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    // Log the queryURL
-    console.log(queryURL);
-    console.log(response);
-    let lat = response.coord.lat;
-    let lon = response.coord.lon;
-    console.log(lat);
-    console.log(lon);
-    $("#cityNameDisplay").text(
-      response.name + "(" + moment().format("l") + ")"
-    );
-    $(".weatherIcon").attr(
-      "src",
-      "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
-    );
-    $("#cityTempDisplay").text(response.main.temp);
-    $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
-    $("#minTemp").text(convertKtoC(response.main.temp_min).toFixed(2));
-    $("#maxTemp").text(convertKtoC(response.main.temp_max).toFixed(2));
-    $("#cityHumidDisplay").text(response.main.humidity);
-    $("#cityWindDisplay").text(response.wind.speed);
-    getFiveDays(cityInput);
-    $("#cityUV").removeClass();
-    getUV(lat, lon);
-  });
-}
+//   // AJAX call to the OpenWeatherMap API
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then(function (response) {
+//     // Log the queryURL
+//     console.log(queryURL);
+//     console.log(response);
+//     let lat = response.coord.lat;
+//     let lon = response.coord.lon;
+//     console.log(lat);
+//     console.log(lon);
+//     $("#cityNameDisplay").text(
+//       response.name + "(" + moment().format("l") + ")"
+//     );
+//     $(".weatherIcon").attr(
+//       "src",
+//       "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
+//     );
+//     $("#cityTempDisplay").text(response.main.temp);
+//     $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
+//     $("#minTemp").text(convertKtoC(response.main.temp_min).toFixed(2));
+//     $("#maxTemp").text(convertKtoC(response.main.temp_max).toFixed(2));
+//     $("#cityHumidDisplay").text(response.main.humidity);
+//     $("#cityWindDisplay").text(response.wind.speed);
+//     getFiveDays(cityInput);
+//     $("#cityUV").removeClass();
+//     getUV(lat, lon);
+//   });
+// }
 
 function getWeather2(cityInput) {
   const queryURL =
@@ -208,12 +208,13 @@ function convertKtoC(kelvin) {
 }
 
 function init() {
-  if (localStorage.length !== 0) {
-    cityArray = JSON.parse(localStorage.getItem("cityNamez"));
-    for (i = 0; i < cityArray.length; i++) {
-      $("#cityLists").append($("<div>").addClass("cityEl").text(cityArray[i]));
-      getWeather2(cityArray[i]);
-    }
+  cityArray = JSON.parse(localStorage.getItem("cityNamez"));
+  if (!cityArray) {
+    cityArray = [];
+  }
+  for (i = 0; i < cityArray.length; i++) {
+    $("#cityLists").append($("<div>").addClass("cityEl").text(cityArray[i]));
+    getWeather2(cityArray[i]);
   }
 }
 
@@ -224,5 +225,7 @@ $("#removeLocalData").on("click", function () {
 });
 
 // $('#cityLists').on('click', getWeather);
-$(document).on("click", ".cityEl", getWeather);
+$(document).on("click", ".cityEl", function () {
+  getWeather2($(this).text());
+});
 init();
