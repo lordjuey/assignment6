@@ -16,47 +16,6 @@ $("#submitBtn").on("click", function () {
   localStorage.setItem("cityNamez", JSON.stringify(cityArray));
 });
 
-//to write a function that gets info from openWeatherMap API
-// function getWeather() {
-//   const cityInput = $(this).text();
-//   console.log(cityInput);
-
-//   const queryURL =
-//     "https://api.openweathermap.org/data/2.5/weather?q=" +
-//     cityInput +
-//     "&appid=166a433c57516f51dfab1f7edaed8413";
-
-//   // AJAX call to the OpenWeatherMap API
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//   }).then(function (response) {
-//     // Log the queryURL
-//     console.log(queryURL);
-//     console.log(response);
-//     let lat = response.coord.lat;
-//     let lon = response.coord.lon;
-//     console.log(lat);
-//     console.log(lon);
-//     $("#cityNameDisplay").text(
-//       response.name + "(" + moment().format("l") + ")"
-//     );
-//     $(".weatherIcon").attr(
-//       "src",
-//       "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png"
-//     );
-//     $("#cityTempDisplay").text(response.main.temp);
-//     $("#cityTempDisplayCel").text(convertKtoC(response.main.temp).toFixed(2));
-//     $("#minTemp").text(convertKtoC(response.main.temp_min).toFixed(2));
-//     $("#maxTemp").text(convertKtoC(response.main.temp_max).toFixed(2));
-//     $("#cityHumidDisplay").text(response.main.humidity);
-//     $("#cityWindDisplay").text(response.wind.speed);
-//     getFiveDays(cityInput);
-//     $("#cityUV").removeClass();
-//     getUV(lat, lon);
-//   });
-// }
-
 function getWeather2(cityInput) {
   const queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -194,9 +153,6 @@ function getUV(lat, lon) {
     }
   });
 }
-
-//function that save cities to localStorage
-function saveCity() {}
 
 //function to change degree into celcius
 function convertKtoC(kelvin) {
